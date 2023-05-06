@@ -1,0 +1,135 @@
+.flex {
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: blueviolet;
+  margin: 0%;
+  padding: 0%;
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+h1 {
+  color: white;
+  font-size: 60px;
+  margin: 10px 20px;
+}
+
+.column {
+  width: 450px;
+  min-height: 300px;
+  border: 2px solid white;
+  border-radius: 10px 100px 100px 100px;
+  padding: 20px 20px 100px 20px;
+  margin-top: 30px;
+  background-image: radial-gradient(rgb(176, 115, 233), blueviolet);
+}
+
+.card {
+  color: white;
+  font-size: 24px;
+  background-color: rgb(58, 18, 94);
+  border-bottom: 1px solid white;
+  word-break: break-word;
+  min-width: 200px;
+  min-height: 100px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 0px solid transparent;
+  font-size: 24px;
+  /* margin-right: 10px; */
+  color: rgb(255, 255, 255);
+}
+input {
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+  outline-color: #fff;
+}
+button {
+  float: right;
+  color: blueviolet;
+  margin-left: 5px;
+  font-size: 20px;
+
+  border-radius: 5px;
+  border: 0px solid transparent;
+  border: 1px solid white;
+  transition: 0.2s all ease-in-out;
+}
+
+li button:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+.card:focus {
+  outline: none;
+}
+
+.btn1,
+.btn2 {
+  color: blueviolet;
+  font-weight: 500;
+  font-size: 24px;
+  border-radius: 5px;
+  border: 0px solid transparent;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  transition: 0.3s all ease-in-out;
+  height: 70px;
+  width: 100px;
+}
+.btn1:hover,
+.btn2:hover {
+  background-color: rgba(194, 129, 255, 0.253);
+  color: white;
+  transform: scale(0.97);
+}
+
+.dark {
+  background-color: #151414;
+}
+.toggle__btn {
+  color: blueviolet;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  display: grid;
+  place-content: center;
+  transition: all 1s;
+}
+
+.toggle__btn i {
+  font-size: 30px;
+}
+
+.d {
+  background-color: #fff;
+}
+body {
+  transition: all 1s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+.add-con {
+  justify-content: space-between;
+}

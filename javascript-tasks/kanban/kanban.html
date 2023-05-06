@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="kanban.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container ">
+      <h1> kanban board</h1>
+      <div class="main">
+        <div class="column col-1" id="column1">
+          <div>
+            <h3>Column 1</h3>
+            <div class="flex add-con">
+              <input type="text" id="input1">
+              <button class="btn1">Add Card
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="column col-2" id="column2">
+          <div >
+            <h3>Column 2</h3>
+            <div class="flex add-con">
+              <input type="text" id="input2">
+
+            <button class="btn2">Add Card</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      <span class="dark toggle__btn"><i class="fa-solid fa-moon rotate"></i></span>
+    <script src="kanban.js"></script>
+  </body>
+</html>
