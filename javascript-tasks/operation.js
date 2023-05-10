@@ -1,4 +1,5 @@
 // "use strict";
+
 // let cash = 1000;
 // let currentLiabilities = 500;
 // CashFlowRatio: cash / currentLiabilities;

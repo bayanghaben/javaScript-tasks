@@ -8,7 +8,7 @@ for (let i = 1; i <= 50; i++) {
   }
 }
 ////print 1-50 using While
-let i = 1;
+// let i = 1;
 
 while (i <= 50) {
   if (i % 2 === 0) {
@@ -93,54 +93,42 @@ fizzBuzzRecursive(10);
 //   return result.substring(0, result.length - 2);
 // }
 // convertToBanknotes(57, [25, 10, 5, 1]);
+const convertedBanknotes = [];
+function convertNumberToBanknotes(number, banknotes) {
+  // Create an array to store the banknotes
 
-// function convertNumberToBanknotes(number, banknotes) {
-//   // Create an array to store the banknotes
-//   const convertedBanknotes = [];
-//   // Iterate through the banknotes array
-//   for (let i = 0; i < banknotes.length; i++) {
-//     // Get the current banknote
-//     const banknote = banknotes[i];
-//     // Calculate the number of banknotes that can be created from the number
-//     const numBanknotes = Math.floor(number / banknote);
-//     // Add the number of banknotes to the converted banknotes array
-//     convertedBanknotes.push(numBanknotes);
-//     // Subtract the number of banknotes from the number
-//     number -= numBanknotes * banknote;
-//   }
-//   // Return the converted banknotes array
-//   return convertedBanknotes;
-// }
-// convertNumberToBanknotes(57, [25, 10, 5, 1]);
-// //
+  for (let i = 0; i < banknotes.length; i++) {
+    const banknote = banknotes[i];
+    if (number >= banknote) {
+      convertedBanknotes.push(banknote);
+      number -= banknote;
+      if (banknotes.length == 0 && number > 0) {
+        banknotes.unshift(shifted);
+      }
+      convertNumberToBanknotes(number, banknotes);
+    } else {
+      var shifted = banknotes.shift();
+      console.log(shifted);
+      convertNumberToBanknotes(number, banknotes);
+      console.log(banknotes);
+    }
+  }
+  return convertedBanknotes;
+}
+console.log(convertNumberToBanknotes(57, [25, 10, 5, 1])); // //
 // 8. Write a function that counts the existence of a specific character within a string, despite the case.
 // Sample Input: (“Coding Academy by Orange”, “o”)
 // Sample Output: 2
 function countCharOccurrences(str, char) {
   let count = 0;
   for (let i = 0; i < str.length; i++) {
-    if (str.charAt(i).toLowerCase() === char.toLowerCase()) {
+    if (str.charAt(i).toLowerCase() == char.toLowerCase()) {
       count++;
     }
   }
   return count;
 }
-countCharOccurrences("Coding Academy by Orange", "O");
-
-function countString(str, letter) {
-  let count = 0;
-
-  // looping through the items
-  for (let i = 0; i < str.length; i++) {
-    // check if the character is at that position
-    if (str.charAt(i) == letter) {
-      count += 1;
-    }
-  }
-  return count;
-}
-countString("Coding Academy by Orange", "O");
-//
+console.log(countCharOccurrences("Coding Academy by Orange", "o"));
 // 9. Write for loops that accomplish the following tasks:
 // a. Print the numbers 0 - 20, one number per line.
 for (i = 0; i <= 20; i++) {
@@ -205,3 +193,68 @@ console.log(oddArr);
 // • The number of meals is determined as an input.
 // • The meals must include one item from each category.
 // • No two meals should be identical.
+// Define the options for each category
+const proteinOptions = ["chicken", "pork", "tofu", "beef", "fish", "beans"];
+const grainOptions = ["rice", "pasta", "corn", "potato", "quinoa", "crackers"];
+const vegetableOptions = [
+  "peas",
+  "green beans",
+  "kale",
+  "edamame",
+  "broccoli",
+  "asparagus",
+];
+const beverageOptions = ["juice", "milk", "water", "soy milk", "soda", "tea"];
+const dessertOptions = [
+  "apple",
+  "banana",
+  "more kale",
+  "ice cream",
+  "chocolate",
+  "kiwi",
+];
+
+// Define the number of meals to generate
+const numMeals = parseInt(prompt("How many meals do you want to create?"));
+
+// Create an empty array to store the generated meals
+const meals = [];
+
+// Loop through the number of meals to generate
+for (let i = 0; i < numMeals; i++) {
+  // Initialize the meal object
+  const meal = {};
+
+  // Randomly select one item from each category
+  meal.protein =
+    proteinOptions[Math.floor(Math.random() * proteinOptions.length)];
+  meal.grain = grainOptions[Math.floor(Math.random() * grainOptions.length)];
+  meal.vegetable =
+    vegetableOptions[Math.floor(Math.random() * vegetableOptions.length)];
+  meal.beverage =
+    beverageOptions[Math.floor(Math.random() * beverageOptions.length)];
+  meal.dessert =
+    dessertOptions[Math.floor(Math.random() * dessertOptions.length)];
+
+  // Check if the meal is already in the array of generated meals
+  while (meals.some((m) => JSON.stringify(m) === JSON.stringify(meal))) {
+    // If the meal is already in the array, generate a new one
+    meal.protein =
+      proteinOptions[Math.floor(Math.random() * proteinOptions.length)];
+    meal.grain = grainOptions[Math.floor(Math.random() * grainOptions.length)];
+    meal.vegetable =
+      vegetableOptions[Math.floor(Math.random() * vegetableOptions.length)];
+    meal.beverage =
+      beverageOptions[Math.floor(Math.random() * beverageOptions.length)];
+    meal.dessert =
+      dessertOptions[Math.floor(Math.random() * dessertOptions.length)];
+  }
+
+  // Add the unique meal to the array of generated meals
+  meals.push(meal);
+}
+
+// Print the array of generated meals
+meals.forEach((meal, i) => {
+  console.log(`Meal ${i + 1}:`, meal);
+});
